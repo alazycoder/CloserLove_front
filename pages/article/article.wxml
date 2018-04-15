@@ -1,0 +1,24 @@
+<import src="../../src/html2wxml.wxml/" />
+
+<view class="container">
+  <template is="html2Wxml" data="{{innerHTML}}"></template>
+  <view class="feedback">
+    <view class="like">
+      <image wx:if="{{like_now==false}}" class="likeimage" src="../../images/like.jpg" catchtap="clickLike"></image>
+      <image wx:else class="likeimage" src="../../images/liked.jpg" catchtap="clickLike"></image>
+      <view class="likeNum">{{likeNum}}</view>
+    </view>
+    <view class="dlike">
+      <image wx:if="{{dislike_now==false}}" class="dlikeimage" src="../../images/dislike.jpg" catchtap="clickDislike"></image>
+      <image wx:else class="dlikeimage" src="../../images/disliked.jpg" catchtap="clickDislike"></image>
+      <view class="dislikeNum">{{dislikeNum}}</view>
+    </view>
+  </view>
+  <view wx:if="{{recommends.length>0}}" class="recommend">
+    <view class="recommend_title">推荐阅读</view>
+    <view class="recommend_list">
+      <view wx:for="{{recommends}}" wx:key="key" catchtap='clickRecommend' data-ref="{{item.ref}}">
+        {{item.title}}</view>
+    </view>
+  </view>
+</view>

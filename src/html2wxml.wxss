@@ -1,0 +1,47 @@
+.head {
+  display: block;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 200%;
+  margin-top: 40rpx;
+  margin-bottom: 80rpx;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+}
+
+.body{
+  justify-content: center;
+  display: block;
+  line-height: 170%;
+} 
+
+.center{
+  width: 100%;
+  display: inline-table;
+  text-align: center;
+}
+
+.br {
+  display: block;
+  line-height: 40rpx;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+}
+
+.b{
+  font-weight: bold;
+}
+
+.i{
+  font-style: italic;
+}
+
+.div {
+  display: block;
+  line-height: 170%;
+}
+
+.strong {
+  font-weight: bold;
+}

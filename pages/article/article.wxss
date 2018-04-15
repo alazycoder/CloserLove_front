@@ -1,0 +1,47 @@
+@import "../../src/html2wxml.wxss";
+
+.container{
+   margin-left: 50rpx;
+   margin-right: 50rpx;
+   margin-bottom: 50rpx;
+}
+
+.feedback{
+   display: flex;
+   flex-direction: row;
+}
+
+.like{
+  margin-left: 20rpx;
+}
+
+.dlike{
+  margin-left:100rpx;
+}
+
+.likeimage,.dlikeimage{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 5rpx;
+  flex-shrink: 0;
+}
+
+.likeNum,.dislikeNum{
+  font-size: 11px;
+  text-align:center;
+}
+
+.recommend{
+  margin-top: 100rpx;
+  line-height: 170%;
+}
+
+.recommend_title{
+  color: blue;
+  font-weight:bold;
+}
+
+.recommend_list{
+  color:blue;
+  font-size:14px;
+}

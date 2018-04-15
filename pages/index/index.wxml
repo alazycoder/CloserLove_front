@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="container">
+  <scroll-view style="height:{{windowHeight}}px" scroll-y="true" scroll-into-view="{{toView}}" scroll-with-animation="true">
+      <view wx:for="{{chatList}}" wx:key="time">
+        <view wx:if="{{item.orientation == 'l'}}" class="chat-left" id="{{item.id}}">
+          <image class="avatar-img" src="/images/me.jpg"></image>
+          <view class='titleanditems_l'>
+            <view wx:if="{{item.index==0}}" class='text_l'>{{welcome_start}}</view>
+            <view class='text_l'>{{item.text}}</view>
+            <view class='clickBtn' wx:for="{{item.list_show}}" wx:key="title">
+              <view class="arrow">→</view>
+              <label class="url" catchtap="chooseItem" data-ref="{{item.ref}}" data-title="{{item.title}}">{{item.title}}
+              </label>
+            </view>
+            <button wx:if="{{item.list_all.length>itemsMaxLength}}" class='anotherOneBtn' catchtap="getAnotherBatch"
+             data-fatherRequest="{{item.fatherRequest}}" data-index="{{item.index}}">换一批
+            </button>
+          </view>
+        </view>
+        <view wx:if="{{item.orientation == 'r'}}" class="chat-right" id="{{item.id}}">
+          <view class='titleanditems_r'>{{item.text}}</view>
+          <image class="avatar-img" src="{{userInfo.avatarUrl}}"></image>
+        </view>
+      </view>
+  </scroll-view>
+  <form bindsubmit="sendChat">
+    <view class="ask-input-word">
+      <input placeholder="" type="text" cursor-spacing="20rpx" confirm-type="done" bindconfirm="sendChat" name='input' value="{{askWord}}" />
+      <button class='sendBtn' formType="submit">发送</button>
+    </view>
+  </form>
+</view>
